@@ -8,12 +8,7 @@
   /* выше для экранов больше 1600px отцентрировали весь контент */
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
-
-h1, h2, h3, h4, p, a {
-  margin: 0;
-  padding: 0;
-}
-
+/*TODO Не забыть удалить "em"*/
 /*Заглавный блок*/
 .header {
   height: 100vh;
@@ -23,6 +18,7 @@ h1, h2, h3, h4, p, a {
   position: relative;
   margin-bottom: 100px;
   background-color: #f2f2f2;
+  z-index: 1;
   /* выше установили ограничения для секции */
 }
 
@@ -38,17 +34,15 @@ h1, h2, h3, h4, p, a {
   position: absolute;
   top: 30px;
   left: 64px;
-  z-index: 10;
 }
 
 .header__title {
   font-size: 102px;
   line-height: 96px;
   width: 730px;
-  margin-left: 64px;
+  margin: 0 0 0 64px;
   align-self: center;
   font-weight: bold;
-  z-index: 3;
 }
 
 .header__subtitle {
@@ -56,15 +50,19 @@ h1, h2, h3, h4, p, a {
   font-size: 18px;
   line-height: 25px;
   font-weight: normal;
-  z-index: 2;
   position: absolute;
   left: 64px;
   bottom: 30px;
+  margin: 0;
 }
 
 .header__link {
   text-decoration: none;
   color: #2f80ed;
+}
+
+.header__link:hover {
+  font-size: 20px;
 }
 
 .header__main-illustration {
@@ -73,7 +71,7 @@ h1, h2, h3, h4, p, a {
   position: absolute;
   bottom: 0;
   right: 0;
-  z-index: 1;
+  z-index: -1;
 }
 
 /* ниже мы привели пример двух селекторов, чтобы вы вспомнили запись элемента */
@@ -84,6 +82,7 @@ h1, h2, h3, h4, p, a {
   position: absolute;
   top: 64px;
   right: 0;
+  z-index: -2;
 }
 
 /*Наполнение сайта*/
@@ -94,31 +93,34 @@ h1, h2, h3, h4, p, a {
 
 /*Водный блок*/
 .description {
+  display: flex;
   margin-bottom: 100px;
-  width: 80%;
-  min-height: 200px;
-  align-self: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .two-columns {
   display: flex;
+  width: 80%;
+  justify-content: space-between;
 }
 
 .two-columns__brief {
   width: 175px;
-  line-height: 1.2em;
+  line-height: 1.2;
   font-size: 18px;
   font-weight: normal;
   color: #2f80ed;
+  margin: 0;
 }
 
 .two-columns__main-text {
   width: 80%;
-  list-style: none;
+  min-width: 784px;
 }
 
 .two-columns__paragraph {
-  margin-bottom: 30px;
+  margin: 0 0 30px 0;
   line-height: 34px;
   font-size: 24px;
   font-weight: normal;
@@ -136,7 +138,7 @@ h1, h2, h3, h4, p, a {
 
 /*Блок с таблицей в светлой теме*/
 .digits {
-  padding-bottom: 100px;
+  margin-bottom: 100px;
   display: flex;
   flex-direction: column;
 }
@@ -145,10 +147,10 @@ h1, h2, h3, h4, p, a {
   align-self: center;
   text-align: center;
   width: 60%;
-  line-height: 1.15em;
+  line-height: 1.15;
   font-size: 60px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin: 0 0 20px 0;
 }
 
 .section-subtitle {
@@ -158,6 +160,7 @@ h1, h2, h3, h4, p, a {
   font-size: 24px;
   font-weight: normal;
   width: 60%;
+  margin: 0;
 }
 
 .table {
@@ -166,22 +169,22 @@ h1, h2, h3, h4, p, a {
   width: 1100px;
   margin: 0 auto;
   justify-content: space-between;
+  list-style: none;
 }
 
 .table__cell {
   width: 250px;
-  min-height: 50px;
   margin-top: 60px;
 }
 
 .table__heading {
-  line-height: 1.15em;
+  line-height: 1.15;
   font-size: 24px;
   font-weight: bold;
 }
 
 .table__text {
-  line-height: 1.2em;
+  line-height: 1.2;
   font-size: 18px;
   font-weight: normal;
   margin-top: 20px;
@@ -191,7 +194,7 @@ h1, h2, h3, h4, p, a {
 .feynman {
   display: flex;
   flex-direction: column;
-  height: 790px;
+  min-height: 790px;
   position: relative;
   background-color: #f2f2f2;
   padding-top: 100px;
@@ -201,14 +204,15 @@ h1, h2, h3, h4, p, a {
   width: 648px;
   align-self: center;
   text-align: center;
-  line-height: 1.15em;
+  line-height: 1.15;
   font-size: 120px;
   font-weight: bold;
   z-index: 2;
+  margin: 0 0 70px 0;
 }
 
 .feynman__subtitle {
-  margin-top: 70px;
+  margin: 0;
   align-self: center;
   text-align: center;
   line-height: 51px;
@@ -225,8 +229,12 @@ h1, h2, h3, h4, p, a {
   color: #2f80ed;
   line-height: 51px;
   font-size: 36px;
-  font-weight: bold;
+  font-weight: normal;
   z-index: 1;
+}
+
+.feynman__link:hover {
+  font-size: 40px;
 }
 
 .feynman__image {
@@ -244,6 +252,7 @@ h1, h2, h3, h4, p, a {
   position: relative;
   background-color: #1f1f1f;
   overflow: hidden;
+  z-index: 1;
 }
 
 .kaufman__triangle {
@@ -253,24 +262,22 @@ h1, h2, h3, h4, p, a {
   position: absolute;
   top: 0;
   right: -210px;
-  z-index: 1;
+  background-size: cover;
+  z-index: -1;
 }
 
 /* и элемента с модификатором вида ключ-значение */
 .section-title_theme_dark {
   margin-top: 90px;
   color: #fff;
-  z-index: 2;
 }
 
 .section-subtitle_theme_dark {
   color: #fff;
-  z-index: 2;
 }
 
 .table_theme_dark {
   padding-bottom: 90px;
-  z-index: 2;
 }
 
 .table__cell_theme_dark {
@@ -296,11 +303,12 @@ h1, h2, h3, h4, p, a {
   flex-direction: column;
   background: #1f1f1f;
   color: #fff;
+  min-height: 350px;
 }
 
 .footer__columns {
   width: 90%;
-  min-height: 350px;
+  min-height: 250px;
   align-self: center;
   display: flex;
   justify-content: space-between;
@@ -331,7 +339,7 @@ h1, h2, h3, h4, p, a {
 }
 
 .footer__column-heading {
-  margin-bottom: 20px;
+  margin: 0 0 20px 0;
   line-height: 30px;
   font-size: 18px;
   font-weight: bold;
@@ -340,6 +348,9 @@ h1, h2, h3, h4, p, a {
 .footer__column-links {
   display: flex;
   flex-direction: column;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
 }
 
 .footer__column-link {
@@ -358,4 +369,5 @@ h1, h2, h3, h4, p, a {
 .footer__social-icon {
   height: 16px;
   width: 16px;
+  margin-right: 10px;
 }
