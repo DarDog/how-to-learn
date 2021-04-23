@@ -170,6 +170,7 @@
   margin: 0 auto;
   justify-content: space-between;
   list-style: none;
+  padding-left: 0;
 }
 
 .table__cell {
@@ -181,13 +182,14 @@
   line-height: 1.15;
   font-size: 24px;
   font-weight: bold;
+  margin-top: 0;
 }
 
 .table__text {
   line-height: 1.2;
   font-size: 18px;
   font-weight: normal;
-  margin-top: 20px;
+  margin: 20px 0 0 0;
 }
 
 /*Блок посвященный Фэйману*/
